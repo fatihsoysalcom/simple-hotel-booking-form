@@ -1,0 +1,88 @@
+<html>
+<head>
+<title>Direct Booking Form</title>
+<style>
+  body { font-family: 'Arial', sans-serif; margin: 20px; background-color: #f4f4f4; }
+  .container { max-width: 600px; margin: auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+  h1 { text-align: center; color: #333; }
+  label { display: block; margin-bottom: 8px; font-weight: bold; }
+  input[type="text"], input[type="email"], input[type="date"], select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  button {
+    background-color: #5cb85c;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+  }
+  button:hover { background-color: #4cae4c; }
+  .language-switcher { text-align: right; margin-bottom: 15px; }
+  .language-switcher a { margin-left: 10px; text-decoration: none; color: #007bff; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="language-switcher">
+    <a href="#">English</a> | <a href="#">العربية</a>
+  </div>
+  <h1>Book Your Stay Directly</h1>
+
+  <form id="bookingForm">
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="checkin">Check-in Date:</label>
+    <input type="date" id="checkin" name="checkin" required>
+
+    <label for="checkout">Check-out Date:</label>
+    <input type="date" id="checkout" name="checkout" required>
+
+    <label for="adults">Adults:</label>
+    <select id="adults" name="adults" required>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+
+    <label for="children">Children:</label>
+    <select id="children" name="children" required>
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+    </select>
+
+    <label for="roomType">Room Type:</label>
+    <select id="roomType" name="roomType" required>
+      <option value="standard">Standard Suite</option>
+      <option value="deluxe">Deluxe Suite</option>
+      <option value="premium">Premium Suite</option>
+    </select>
+
+    <button type="submit">Book Now</button>
+  </form>
+</div>
+
+<script>
+  document.getElementById('bookingForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent actual form submission for this demo
+    alert('Booking request submitted! Thank you for booking directly.');
+    // In a real application, this is where you'd send the data to your backend
+    // or a booking management system.
+  });
+</script>
+
+</body>
+</html>
